@@ -34,3 +34,32 @@ $ npm run dev
     - Pre-rendered Views are Loaded 
     - After first load, Application turns into SPA
     - Greate for SEO
+
+## Nuxt.js Pages, Routing & Views
+
+### From Config To Folders & Files
+
+real routing
+```js
+{
+    path: '/',
+    component: WelcomeComponent
+},
+// /
+// index.vue
+
+{
+    path: '/products',
+    component: ProductsComponent
+},
+// /products
+// /products/index.vue
+
+{
+    path: '/products/:id',
+    component: ProductComponent
+}
+
+// /products/_id
+// /products/index.vue
+```
