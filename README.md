@@ -19,3 +19,18 @@ $ yarn create nuxt-app <my-project>
 $ cd my-nuxt-app
 $ npm run dev
 ```
+
+## Built with Nuxt.js
+
+- Universal App
+    - First View is rendered dynamically on the Server
+    - After first load, Application turns into SPA
+    - Greate for SEO
+- Single Page App
+    - App starts after first load
+    - App stays SPA
+    - Like a normal Vue App but simplified Development
+- Static App
+    - Pre-rendered Views are Loaded 
+    - After first load, Application turns into SPA
+    - Greate for SEO
