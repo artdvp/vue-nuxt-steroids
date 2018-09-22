@@ -6,10 +6,11 @@
 
 <script>
 export default {
+  layout: "users",
   validate(data) {
-      // console.log(data);
-      // return data.params.id == 1;
-      return /^\d+$/.test(data.params.id); // validate number only
+    // console.log(data);
+    // return data.params.id == 1;
+    return /^\d+$/.test(data.params.id); // validate number only
   }
 };
 </script>
