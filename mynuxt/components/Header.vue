@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#ddd;
   }
 
 .nav-items {
@@ -28,5 +29,15 @@
     justify-content: space-around;
     align-items: center;
     width: 80%;
+}
+
+.navitems a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-items a:hover,
+.nav-items a:active {
+    color:white;
 }
 </style>
