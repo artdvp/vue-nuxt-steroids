@@ -63,3 +63,10 @@ real routing
 // /products/_id
 // /products/index.vue
 ```
+
+## Resource & Link
+
+- More on Flexbox : https://academind.com/learn/css/understanding-css/the-position-property
+- More on Routing in Nuxt: https://nuxtjs.org/guide/routing
+- More on Views, Layouts etc: https://nuxtjs.org/guide/views
+
