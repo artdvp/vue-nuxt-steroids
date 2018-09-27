@@ -64,6 +64,10 @@ real routing
 // /products/index.vue
 ```
 
+# Handling Data & Vuex
+
+- Load and Manage Data With Ease
+
 ## Resource & Link
 
 - More on Flexbox : https://academind.com/learn/css/understanding-css/the-position-property

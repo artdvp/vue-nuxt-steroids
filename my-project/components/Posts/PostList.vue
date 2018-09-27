@@ -1,11 +1,11 @@
 <template>
     <section class="post-list">
-      <post-preview id="1" :is-admin="isAdmin" thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg" title="Hello there!"
-        previewText="This my first post!"></post-preview>
-      <post-preview id="2" :is-admin="isAdmin" thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg" title="Hello !"
-        previewText="This my second post!"></post-preview>
-      <post-preview id="3" :is-admin="isAdmin" thumbnail="https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg" title="Hi!"
-        previewText="This my third post!"></post-preview>
+      <PostPreview v-for="post in posts" :key="post.id" 
+       :id="post.id" 
+       :is-admin="isAdmin" 
+       :thumbnail="post.thumbnail" 
+       :title="post.title"
+       :previewText="post.previewText" />
     </section>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false  
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }

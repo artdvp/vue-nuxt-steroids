@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the lastes tech news!</h1>
     </section>
-    <post-list></post-list>
+    <post-list :posts="loadedPosts"></post-list>
   </div>
 </template>
 
@@ -13,6 +13,24 @@ import PostList from '@/components/Posts/PostList.vue'
 export default {
   components: {
     PostList
+  },
+  data() {
+    return {
+      loadedPosts: [
+       { 
+          id: "1", 
+          title: 'First Post', 
+          previewText: 'This is our first post!',
+          thumbnail: 'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg' 
+        },
+        { 
+          id: "2", 
+          title: 'Second Post', 
+          previewText: 'This is our second post!',
+          thumbnail: 'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg' 
+        } 
+      ]
+    }
   }
 }
 </script>
