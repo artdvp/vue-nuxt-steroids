@@ -8,31 +8,43 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList.vue'
+import PostList from "@/components/Posts/PostList.vue";
 
 export default {
   components: {
     PostList
   },
-  data() {
-    return {
-      loadedPosts: [
-       { 
-          id: "1", 
-          title: 'First Post', 
-          previewText: 'This is our first post!',
-          thumbnail: 'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg' 
-        },
-        { 
-          id: "2", 
-          title: 'Second Post', 
-          previewText: 'This is our second post!',
-          thumbnail: 'https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg' 
-        } 
-      ]
-    }
-  }
-}
+  asyncData(context, callback) {
+    // execute on the server
+    setTimeout(() => {
+      // this access before render
+      callback(null, {
+        loadedPosts: [
+          {
+            id: "1",
+            title: "First Post",
+            previewText: "This is our first post!",
+            thumbnail:
+              "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
+          },
+          {
+            id: "2",
+            title: "Second Post",
+            previewText: "This is our second post!",
+            thumbnail:
+              "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
+          }
+        ]
+      });
+    }, 1500);
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+  created() {}
+};
 </script>
 
 <style scoped>
@@ -41,7 +53,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
