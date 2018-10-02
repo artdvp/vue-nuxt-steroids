@@ -11,32 +11,39 @@ export default {
   components: {
     PostList
   },
-  asyncData(context, callback) {
+  asyncData(context) {
     console.log("asyncData is executed!");
     // Handling Errors with a Callback
-    return new  Promise().catch(e => {
-      context.error(new Error())
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          loadedPosts: [
+            {
+              id: "1",
+              title: "First Post",
+              previewText: "This is our first post!",
+              thumbnail:
+                "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
+            },
+            {
+              id: "2",
+              title: "Second Post",
+              previewText: "This is our second post!",
+              thumbnail:
+                "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
+            }
+          ]
+        });
+      }, 1500);
+      // reject(new Error())
     })
-    setTimeout(() => {
-      callback(new Error(), {
-        loadedPosts: [
-          {
-            id: "1",
-            title: "First Post",
-            previewText: "This is our first post!",
-            thumbnail:
-              "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
-          },
-          {
-            id: "2",
-            title: "Second Post",
-            previewText: "This is our second post!",
-            thumbnail:
-              "https://www.articlesplanet.info/wp-content/uploads/2018/05/Tech-sector.jpg"
-          }
-        ]
+      .then(data => {
+        //
+        return data;
+      })
+      .catch(e => {
+        context.error(e);
       });
-    }, 1500);
   }
 };
 </script>
