@@ -16,6 +16,9 @@ export default {
   },
   asyncData(context, callback) {
     // execute on the server
+    console.log(context);
+    // this.$route.params
+    // this.$route.query
     setTimeout(() => {
       // this access before render
       callback(null, {
