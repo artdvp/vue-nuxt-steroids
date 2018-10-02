@@ -13,8 +13,12 @@ export default {
   },
   asyncData(context, callback) {
     console.log("asyncData is executed!");
+    // Handling Errors with a Callback
+    return new  Promise().catch(e => {
+      context.error(new Error())
+    })
     setTimeout(() => {
-      callback(null, {
+      callback(new Error(), {
         loadedPosts: [
           {
             id: "1",
